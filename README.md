@@ -4,8 +4,6 @@ OpenShift 5 is the next step in Red Hat's enterprise platform strategy, bringing
 
 This repository contains materials for an interactive, three-hour technical overview workshop designed to help participants understand what these changes mean for platform teams, security leaders, and application developers.
 
-The original workshop description is available in [OpenShift_5_vILT_2027.pdf](./OpenShift_5_vILT_2027.pdf).
-
 ## Workshop goal
 
 Enable participants to assess how OpenShift 5 can advance their platform strategy through:
