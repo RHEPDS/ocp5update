@@ -67,3 +67,5 @@ By the end of the workshop, participants will have a prioritized, actionable out
 - Next steps for integrating virtual machines and cloud-native workloads
 
 The session combines expert input, live discussion, and practical scenarios so that participants leave with guidance they can apply to their own OpenShift roadmap.
+
+OpenShift Whats New Update Video https://www.youtube.com/watch?v=StFGncyGiCc&t=1340s 
