@@ -1,0 +1,81 @@
+apiVersion: platform.stackrox.io/v1alpha1
+kind: SecuredCluster
+metadata:
+  name: stackrox-secured-cluster-services
+  namespace: rhacs-operator
+spec:
+  clusterName: minisno.alfslab.com
+  centralEndpoint: central-rhacs-operator.apps.mobilesno.alfslab.com:443
+  auditLogs:
+    collection: Auto
+  admissionControl:
+    enforcement: Enabled
+    listenOnCreates: true
+    listenOnUpdates: true
+    listenOnEvents: true
+    replicas: 1
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+  sensor:
+    resources:
+      requests:
+        cpu: 250m
+        memory: 512Mi
+      limits:
+        cpu: "1"
+        memory: 2Gi
+  scannerV4:
+    scannerComponent: AutoSense
+    db:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 512Mi
+        limits:
+          cpu: "1"
+          memory: 2Gi
+    indexer:
+      scaling:
+        autoScaling: Disabled
+        replicas: 1
+      resources:
+        requests:
+          cpu: 250m
+          memory: 512Mi
+        limits:
+          cpu: "1"
+          memory: 2Gi
+  perNode:
+    collector:
+      collection: CORE_BPF
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: "1"
+          memory: 1Gi
+    compliance:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 256Mi
+        limits:
+          cpu: 500m
+          memory: 1Gi
+    nodeInventory:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 256Mi
+        limits:
+          cpu: 500m
+          memory: 1Gi
+  monitoring:
+    openshift:
+      enabled: true
